@@ -1,8 +1,8 @@
 import .css/styles.css
 
 const countDown = () => {
-    const youthDay = new Date("16 June, 2022 12:00:00").getDate;
-    const now = new Date;
+    const youthDay = new Date("16 June, 2022 12:00:00").getTime();
+    const now = new Date().getTime();
     const gap = youthDay - now;
 
     const second = 1000;
@@ -12,13 +12,13 @@ const countDown = () => {
 
     const textDay = Math.floor(gap / day);
     const textHour = Math.floor((gap % day) / hour);
-    const textMinute = Math.floor((gap % day) / minute);
-    const textSecond = Math.floor((gap % day) / second);
+    const textMinute = Math.floor((gap % hour) / minute);
+    const textSecond = Math.floor((gap % minute) / second);
 
     document.querySelector(".day").innerText = textDay;
-    document.querySelector("hour").innerText = textHour; 
+    document.querySelector(".hour").innerText = textHour; 
     document.querySelector(".minute").innerText = textMinute;
-    document.querySelector(".second").innerText = textSecond;0
-}
+    document.querySelector(".second").innerText = textSecond;
+};
 
-countDown();
+setInterval(countDown, 1000);
