@@ -1,4 +1,4 @@
-
+// This is efficient code for a countdown timer, can be changed to suit any type of countdown
 const countdown = () => {
     const youthDay = new Date("June 16, 2022 12:00:00").getTime();
     const now = new Date().getTime();
